@@ -9,11 +9,11 @@ let rec mem t n =
          Leaf -> false
        | Node (l,r,x) -> if (n = x) then true else if (n > x) then mem r n else mem l n;;
 
+
 let rec add t n = 
-    match t with 
-        Node (l,r,x) -> if (n > x && !(mem t x)) then r = Node (Leaf,Leaf, n) ;;
-
-
+    match t with
+    |Leaf -> Node (Leaf, Leaf, n)
+    |Node (l,r,x) -> if (n = x) then t else if n < x then Node((add l n), r ,x) else Node(l, (add r n),x);;
 
 add q 8;;
-Printff.printf "%B\n" (mem q 54)
+Printff.printf "%B\n" (add q 54)
