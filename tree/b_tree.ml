@@ -27,7 +27,8 @@ let rec delete t n =
     | Node (l,r,x) -> if (n = x) then let asd = findRight l in match asd with 
         None -> r
       | Some x -> Node (delete l x, r, x) 
-    else if (n < x) then Node (find l, r, x) else Node (l, find r, x) in find t ;; 
+    else if (n < x) then Node (find l, r, x) else Node (l, find r, x) in 
+  find t ;; 
 
 let rec string_of_tree t = 
     match t with

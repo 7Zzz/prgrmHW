@@ -18,5 +18,7 @@ let rec treeCicle t =
 let rec add t n =
     match t with 
         Leaf -> Node(Red, Leaf, Leaf, n)
-      | Node (с, l, r, x) -> if (n = x) then t else if (n < x) then treeCicle ( Node Black, ((add l n), r, n) ) else treeCicle (Node Black, (l,(add r n),n))
+      | Node (с, l, r, x) -> if (n = x) then t 
+                             else if (n < x) then treeCicle Node (Black, (add l n, r, n)) 
+                             else treeCicle Node (Black, (l, add r n, n))
  
