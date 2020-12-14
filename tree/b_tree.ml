@@ -4,6 +4,17 @@ let q = Node ((Node (Leaf, Leaf, 1)), Node (Leaf, Leaf, 3), 2);;
 
 (*match q with Node _ -> print_string "n" | Leaf -> print_string "l";;*)
 
+let rec verify t = 
+    match t with
+        Leaf -> true
+      | Node (l,r,x) -> if (x < verify r) then true else if 
+
+let rec find t n = 
+    match t with
+         Leaf -> false
+       | Node (l,r,x) -> if (n = x) then x else if (n > x) then mem r n else mem l n;;//recreate
+
+
 let rec mem t n = 
     match t with
          Leaf -> false
