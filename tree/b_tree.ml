@@ -4,15 +4,15 @@ let q = Node ((Node (Leaf, Leaf, 1)), Node (Leaf, Leaf, 3), 2);;
 
 (*match q with Node _ -> print_string "n" | Leaf -> print_string "l";;*)
 
-let rec verify t = 
+(* let rec verify t = 
     match t with
         Leaf -> true
-      | Node (l,r,x) -> if (x < verify r) then true else if 
+      | Node (l,r,x) -> if (x < verify r) then true else if  *)
 
-let rec find t n = 
+(* let rec find t n = 
     match t with
          Leaf -> false
-       | Node (l,r,x) -> if (n = x) then x else if (n > x) then mem r n else mem l n;;//recreate
+       | Node (l,r,x) -> if (n = x) then x else if (n > x) then mem r n else mem l n;;//recreate *)
 
 
 let rec mem t n = 
@@ -26,6 +26,8 @@ let rec add t n =
       Leaf -> Node (Leaf, Leaf, n)
     | Node (l,r,x) -> if (n = x) then t else if n < x then Node((add l n), r ,x) else Node(l, (add r n),x);;
 
+
+    (* del func *)
 let rec findRight t =
   match t with 
     Leaf -> None

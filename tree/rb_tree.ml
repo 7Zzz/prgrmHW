@@ -6,10 +6,10 @@ let rec mem t n =
        Leaf -> false
      | Node (c,l,r,x) -> if (n = x) then true else if (n > x) then mem r n else mem l n;;
   
-let rotate t =
+(* let rotate t =
     match t with 
 
-
+(* 
 let rec treeCicle t = 
     match t with
         Node Black, Node Red, lson), )
@@ -21,4 +21,4 @@ let rec add t n =
       | Node (с, l, r, x) -> if (n = x) then t 
                              else if (n < x) then treeCicle Node (Black, (add l n, r, n)) 
                              else treeCicle Node (Black, (l, add r n, n))
- 
+  *) *)

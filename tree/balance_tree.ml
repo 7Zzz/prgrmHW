@@ -20,7 +20,6 @@ let rec min_max_depth t =
   ((min a c)+1, (max b d)+1);;
 
 
-
 let make_tree_min_max (min,max) = 
   let rec f k = 
     if k = 0 then Leaf else Node (f (k-1), f (k-1), 0) in 

@@ -17,4 +17,4 @@ let s = readFile "test1.txt";;
 (* print_int (String.length s);;
 print_string s; *)
 
-print_int (div (String.length s) 0 s);;  
+print_int (div (String.length s) 0 s);;
