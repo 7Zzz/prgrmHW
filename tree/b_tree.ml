@@ -3,6 +3,7 @@ type 'a tree = Leaf | Node of 'a tree * 'a tree * 'a
 let q = Node ((Node (Leaf, Leaf, 1)), Node (Leaf, Leaf, 3), 2);;
 
 (*match q with Node _ -> print_string "n" | Leaf -> print_string "l";;*)
+<<<<<<< HEAD
 
 (* let rec verify t = 
     match t with
@@ -14,6 +15,21 @@ let q = Node ((Node (Leaf, Leaf, 1)), Node (Leaf, Leaf, 3), 2);;
          Leaf -> false
        | Node (l,r,x) -> if (n = x) then x else if (n > x) then mem r n else mem l n;;//recreate *)
 
+=======
+let rec find_min t n =
+    match t with 
+        Leaf -> n
+      | Node (l,r,x) -> find_min l x;;
+let rec find_max t n =
+    match t with 
+        Leaf -> n
+      | Node (l,r,x) -> find_max r x;;
+
+let rec verify t (a,b) = 
+    match t with
+        Leaf -> true
+      | Node (l,r,x) -> if (x < a || b < x) then false else (verify l (a, x) && verify r (x, b));;
+>>>>>>> 1fe91e9df01dac5d7b010f96cec26755a131ad4f
 
 let rec mem t n = 
     match t with
@@ -49,5 +65,9 @@ let rec string_of_tree t =
       | Node (l,r,x) -> "("^(string_of_tree l)^(string_of_tree r)^(string_of_int x)^")";;
 
 
-print_string( string_of_tree q ^"\n");;
-print_string( string_of_tree (delete q 2))
+print_string (string_of_tree q ^"\n");;
+print_string (string_of_tree (delete q 2));;
+let int_of_bool b = if b then 1 else 0;;
+Printf.printf "%d" int_of_bool(verify q (find_min q 10, find_max q 0));;
+
+
