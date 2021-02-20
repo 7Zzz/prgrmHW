@@ -82,7 +82,7 @@ int main (){
             depth-=1;
         }
     }
-    cout << s << endl;
+    //cout << s << endl;
     for (int i = 0; i < n; ++i)
         if (s[0] == v[i].name)
             v[i].count+=1;
@@ -117,22 +117,28 @@ int main (){
 			}
 		}
 	}
-	cout <<"NUMS: "<< s << endl;
+//	cout <<"NUMS: "<< s << endl;
+//	cout << "m = "<< m << endl;
+	int num1 = atoi(s.c_str());
+	ans+=atoi(s.c_str());			
+	if(s.size() % 2 == 0){
+		m-=(cap(num1)+1);
+		s.erase(0,cap(num1)+1);
+	}
+	else{
+		m-=cap(num1);
+		s.erase(0,cap(num1));}
 	for (int i = 0; i < m; ++i){
 		int num = atoi(s.c_str());
 		ans+=atoi(s.c_str());
-		cout << atoi(s.c_str()) << endl;
-		if(num < 0){
-			s.erase(0, cap(num)+1);
-			i-=(cap(num)+1);
-			m-=(cap(num)+1);
-		}
-		else{
-			s.erase(0, cap(num));
-			i-=cap(num);
-			m-=cap(num);
-		}
+//		cout << atoi(s.c_str()) << endl;
+//		cout << "DELSIZE="<<cap(num)<< endl;
+		s.erase(0, cap(num)+1);
+		i-=(cap(num)+1);
+		m-=(cap(num)+1);
 	}
+
+	// TODO check eraze and m <<example>>: 2+2 = 6
 	cout << ans;
 
     return 0;
