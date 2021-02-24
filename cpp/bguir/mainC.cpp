@@ -6,7 +6,7 @@
 using namespace std;
 
 struct myStr{
-    int min, max, count;
+    long long min, max, count;
     char name;
 };
 
