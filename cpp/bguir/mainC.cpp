@@ -6,7 +6,7 @@
 using namespace std;
 
 struct myStr{
-    int min, max, count;
+    long long min, max, count;
     char name;
 };
 
@@ -127,7 +127,8 @@ int main (){
 	}
 	else{
 		m-=cap(num1);
-		s.erase(0,cap(num1));}
+		s.erase(0,cap(num1));
+    }
 	for (int i = 0; i < m; ++i){
 		int num = atoi(s.c_str());
 		ans+=atoi(s.c_str());
