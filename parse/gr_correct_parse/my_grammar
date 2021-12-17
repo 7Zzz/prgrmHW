@@ -1,7 +1,0 @@
-S->T|S
-S->T
-T->(S)*T
-T->char*T
-T->epsilon
-
-ab|c = Alt(Concat(a,b),c);
