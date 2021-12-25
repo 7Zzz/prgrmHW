@@ -21,12 +21,12 @@ for i in range(n):
     if take[pos] == max:
         break
     chk[pos] = True
-    g = []
+    arr = []
     for y in range(n):
         t = l[pos][y]
         if t > 0:
-            g.append((y, t))
-    for (first, second) in g:
+            arr.append((y, t))
+    for (first, second) in arr:
         take[first] = min(take[first], take[pos]+second)
 
 
